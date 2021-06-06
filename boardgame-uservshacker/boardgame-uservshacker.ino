@@ -1,9 +1,4 @@
-
-
-
 #include <Keyboard.h>
-#include <Encoder.h> 
-#include <Keypad.h>
 
 
 int buttonPin = A0;
@@ -15,70 +10,36 @@ void setup()
 }
 
 void loop() {
-  int temp = analogRead(buttonPin);   
-  //Serial.println(temp);             
-  if (temp < 30)                     //Lower limit for first button - if below this limit then no button is pushed and LEDs are turned off
-  {
-   //Serial.println("no button");  
-  }
-  else if (temp < 50)             
-  {
-     activateKeybordPress(1); 
-  }
-  else if (temp < 70)                
-  {
-    activateKeybordPress(2); 
-  }
-  else if (temp < 85)               
-  {
-
-  activateKeybordPress(3);
+  
+  int analogRead1 = analogRead(buttonPin);   
      
-  }
-  else if (temp < 100)                
-  {
-      activateKeybordPress(4);
-    
-  }
-    else if (temp < 115)                
-  {
-      activateKeybordPress(5); 
-    
-  }
-    else if (temp < 136)                
-  {
-      activateKeybordPress(6);  
-  }
-    else if (temp < 160)                
-  {
-      activateKeybordPress(7);
-  }
-    else if (temp < 195)                
-  {
-      activateKeybordPress(8);
-  }
-      else if (temp < 245)                
-  {
-      activateKeybordPress(9); 
-  }
-      else if (temp < 330)                
-  {
-     activateKeybordPress(10); 
-  }
-      else if (temp < 500)                
-  {
-      activateKeybordPress(11); 
-  }
-  else                               
-  {
-      activateKeybordPress(12); 
-    
-  }
-  delay(200);                         //Delay for stability
+  if (analogRead1 < 30) { }//Serial.println("no button")
+  else if (analogRead1 < 50) {  activateKeyboard(); Keyboard.print('1'); endKeyboard();}
+  else if (analogRead1 < 70) {  activateKeyboard(); Keyboard.print('2'); endKeyboard();}
+  else if (analogRead1 < 85) {  activateKeyboard(); Keyboard.print('3'); endKeyboard();}
+  else if (analogRead1 < 100) { activateKeyboard(); Keyboard.press('4'); endKeyboard();}
+  else if (analogRead1 < 115) {activateKeyboard(); Keyboard.press('5'); endKeyboard(); }
+  else if (analogRead1 < 136) { activateKeyboard(); Keyboard.press('6'); endKeyboard();}
+  else if (analogRead1 < 160) { activateKeyboard(); Keyboard.press('7'); endKeyboard();}
+  else if (analogRead1 < 195) { activateKeyboard(); Keyboard.press('8'); endKeyboard();}
+  else if (analogRead1 < 245) {activateKeyboard(); Keyboard.press('9'); endKeyboard(); }
+  else if (analogRead1 < 330) { activateKeyboard(); Keyboard.print("X"); endKeyboard();}
+  else if (analogRead1 < 500) { activateKeyboard(); Keyboard.print("Y"); endKeyboard();}
+  else {activateKeyboard(); Keyboard.print("W"); endKeyboard(); }
+  delay(200);             
 }
 
 
-void activateKeybordPress(int field){
-   Serial.print("er staat een pion op vak ");
-   Serial.println(field);
+void activateKeyboard () {
+     Keyboard.press(KEY_LEFT_SHIFT);
+     Keyboard.press('b'); 
+     Keyboard.press('r');
+     Keyboard.press('d');
+     Keyboard.press('v'); 
+     Keyboard.press('k');  
+}
+
+void endKeyboard () {
+    delay(100); 
+    Keyboard.releaseAll(); 
 }

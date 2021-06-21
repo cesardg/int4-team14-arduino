@@ -58,7 +58,7 @@ void loop() {
 
 void activateKeyboard () {
      Keyboard.press(KEY_LEFT_SHIFT);
-     Keyboard.print("brdvknrx");
+     Keyboard.print("rx");
 
 }
 

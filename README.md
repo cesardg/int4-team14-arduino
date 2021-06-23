@@ -6,6 +6,6 @@ Deze code is gebruikt om de arduino micro te configuren als een digitaal spelbor
 
 ![foto arduino spelbord](https://github.com/cesardg/int4-team14-arduino/blob/main/pics/arduino-bordspel3.JPG "foto arduino spelbord")
 
-![foto arduino spelbord](https://github.com/cesardg/int4-team14-arduino/blob/main/pics/arduino-bordspel1.JPG "foto arduino spelbord")
+![foto arduino spelbord](https://github.com/cesardg/int4-team14-arduino/blob/main/pics/arduino-bordspel.JPG "foto arduino spelbord")
 
 ![foto arduino spelbord](https://github.com/cesardg/int4-team14-arduino/blob/main/pics/arduino-bordspel2.JPG "foto arduino spelbord")
